@@ -242,6 +242,10 @@
       thumbs.innerHTML = galleryImages.map((img, i) =>
         `<img src="${img.src}" class="${i === currentIndex ? 'active' : ''}" onclick="goToImage(${i})">`
       ).join('');
+
+      // Hide or show arrows depending on index
+      document.getElementById('prev-arrow').style.display = currentIndex === 0 ? 'none' : 'block';
+      document.getElementById('next-arrow').style.display = currentIndex === galleryImages.length - 1 ? 'none' : 'block';
     }
 
     function nextImage() {
